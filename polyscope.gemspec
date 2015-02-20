@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.version     = Polyscope::VERSION
   s.authors     = ["Julien P.Lefebvre"]
   s.email       = ["julienplefebvre@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Polyscope."
+  s.homepage    = "https://github.com/webgem-jpl/polyscope"
+  s.summary     = "Polyscope is gem that make possible to create easily shape through models association and calculate difference in the different shapes."
   s.description = "TODO: Description of Polyscope."
   s.license     = "MIT"
 
@@ -18,8 +18,6 @@ Gem::Specification.new do |s|
   s.test_files = Dir["spec/**/*"]
   s.add_dependency "rails", "~> 4.2.0"
   s.test_files = Dir["spec/**/*"]
-  s.add_development_dependency "pg"
   s.add_development_dependency 'rspec-rails'
-  s.add_development_dependency 'capybara'
   s.add_development_dependency 'factory_girl_rails'
 end
