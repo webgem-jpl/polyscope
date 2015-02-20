@@ -1,0 +1,5 @@
+FactoryGirl.define do
+  factory :polyscope_abstract do
+    Polyscope::Abstract.create!
+  end
+end

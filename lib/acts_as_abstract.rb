@@ -7,6 +7,14 @@ module ActsAsAbstract
       has_many :components, :as => :abstract, :dependent => :destroy, :class_name => 'Polyscope::Edge'
       has_one :shapes, :as => :shape, :dependent => :destroy, :class_name => 'Polyscope::Shaper'
   end
+  def self.included(base)
+    @classes ||= []
+    @classes << base.name
+  end
+
+  def self.classes
+    @classes
+  end
   module ClassMethods
       def update_diffs
          self.all.each do |p|
@@ -63,7 +71,7 @@ module ActsAsAbstract
       return resource || :all
       end
   end
-   def diff
+  def diff
       if shapes.nil?
             self.shapes=ShapeManager.create!(:shape_id=>id,:shape_type=>self.class.name)
       end
@@ -72,7 +80,7 @@ module ActsAsAbstract
       end
       self.shapes.save
       return
-   end
+  end
    def copy_structure(resource)
           copy_structure_up(resource) if is_component?
           copy_structure_down(resource) if is_abstract?

@@ -1,0 +1,5 @@
+FactoryGirl.define do
+  factory :polyscope_component do
+    Polyscope::Component.create!
+  end
+end

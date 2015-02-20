@@ -1,4 +1,4 @@
-class CreateEdges < ActiveRecord::Migration
+class CreatePolyscopeEdges < ActiveRecord::Migration
   def self.up
     create_table :polyscope_edges, :force => true do |t|
       t.references :abstract, :polymorphic => true, :null => false

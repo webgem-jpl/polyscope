@@ -16,24 +16,14 @@ ActiveRecord::Schema.define(version: 20150218190113) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "high_levels", force: :cascade do |t|
-    t.string   "title"
-    t.integer  "prep_time"
-    t.integer  "cook_time"
+  create_table "polyscope_abstracts", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "low_levels", force: :cascade do |t|
+  create_table "polyscope_components", force: :cascade do |t|
     t.string   "name"
-    t.float    "quantity"
-    t.string   "quantity_type"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  create_table "mid_levels", force: :cascade do |t|
-    t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -48,12 +38,18 @@ ActiveRecord::Schema.define(version: 20150218190113) do
   add_index "polyscope_edges", ["abstract_id", "abstract_type"], name: "a_abstract", using: :btree
   add_index "polyscope_edges", ["component_id", "component_type"], name: "a_component", using: :btree
 
-  create_table "shapers", force: :cascade do |t|
+  create_table "polyscope_middles", force: :cascade do |t|
+    t.text     "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "polyscope_shapes", force: :cascade do |t|
     t.text    "diffs"
     t.integer "shape_id",   null: false
     t.string  "shape_type", null: false
   end
 
-  add_index "shapers", ["shape_id", "shape_type"], name: "index_shapers_on_shape_id_and_shape_type", using: :btree
+  add_index "polyscope_shapes", ["shape_id", "shape_type"], name: "index_polyscope_shapes_on_shape_id_and_shape_type", using: :btree
 
 end

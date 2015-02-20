@@ -1,0 +1,5 @@
+FactoryGirl.define do
+  factory :polyscope_middle do
+    Polyscope::Middle.create!
+  end
+end

@@ -1,4 +1,4 @@
-class MidLevel < ActiveRecord::Base
+class Polyscope::Middle < ActiveRecord::Base
   include ActsAsComponent
   include ActsAsAbstract
 end

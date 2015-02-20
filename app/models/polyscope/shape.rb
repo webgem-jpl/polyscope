@@ -1,4 +1,4 @@
-class Polyscope::Shaper < ActiveRecord::Base
+class Polyscope::Shape < ActiveRecord::Base
   belongs_to :shapes, :polymorphic => true
   serialize :diffs, Hash
   

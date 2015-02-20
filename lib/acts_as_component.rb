@@ -5,6 +5,14 @@ module ActsAsComponent
       extend ClassMethods
       has_many :abstracts, :as => :component, :dependent => :destroy, :class_name => 'Polyscope::Edge'
   end
+  def self.included(base)
+    @classes ||= []
+    @classes << base.name
+  end
+
+  def self.classes
+    @classes
+  end
   module ClassMethods
     def copy (resource)
          clone = resource.class.new
