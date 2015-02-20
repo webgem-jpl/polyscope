@@ -1,6 +1,6 @@
-class CreateIngredients < ActiveRecord::Migration
+class CreateLowLevels < ActiveRecord::Migration
   def change
-    create_table :ingredients do |t|
+    create_table :low_levels do |t|
       t.string :name
       t.float :quantity
       t.string :quantity_type

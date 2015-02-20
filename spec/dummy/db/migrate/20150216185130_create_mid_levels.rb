@@ -1,6 +1,6 @@
-class CreateSteps < ActiveRecord::Migration
+class CreateMidLevels < ActiveRecord::Migration
   def change
-    create_table :steps do |t|
+    create_table :mid_levels do |t|
       t.text :content
       t.timestamps null: false
     end

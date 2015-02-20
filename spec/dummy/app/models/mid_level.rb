@@ -1,4 +1,4 @@
-class Step < ActiveRecord::Base
+class MidLevel < ActiveRecord::Base
   include ActsAsComponent
   include ActsAsAbstract
 end

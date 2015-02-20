@@ -117,7 +117,7 @@ module ActsAsComponent
     up_level
   end
   def create_resource(object_name)
-  resource = object_name.to_s.capitalize.constantize if object_name != :all
+  resource = object_name.to_s.camelize.constantize if object_name != :all
   return resource || :all
   end
 end

@@ -59,7 +59,7 @@ module ActsAsAbstract
           return result
       end
       def create_resource(object_name)
-      resource = object_name.to_s.capitalize.constantize if object_name != :all
+      resource = object_name.to_s.camelize.constantize if object_name != :all
       return resource || :all
       end
   end
@@ -97,7 +97,7 @@ module ActsAsAbstract
         h = Hash.new
         s.each do |d|
           values = self.class.compare(self,r2,d)
-          h[d.downcase.to_sym]=values
+          h[d.underscore.to_sym]=values
           v1 << values[:distance].round(3)
           v2 << values[:sorted_distance].round(3)
         end
@@ -274,7 +274,7 @@ module ActsAsAbstract
    end
    
    def create_resource(object_name)
-   resource = object_name.to_s.capitalize.constantize if object_name != :all
+   resource = object_name.to_s.camelize.constantize if object_name != :all
    return resource || :all
    end
    def polyshape
