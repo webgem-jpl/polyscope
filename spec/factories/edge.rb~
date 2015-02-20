@@ -1,0 +1,4 @@
+FactoryGirl.define do
+  factory :edge, class Polyscope::Edge do
+  end
+end
